@@ -15,7 +15,7 @@ const onNewMessageChange=(event)=>{setNewMessage(event.target.value)}
 const fetchMessages=()=>{  
    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
    .then(res=>res.json())
-   .then(json=>(setThoughts(json.response))
+   .then(json=>(setThoughts(json))
    )
   }
 
@@ -29,10 +29,10 @@ const options=  {
     headers:{'Content-Type':'application/json'
       },
     body:JSON.stringify({
-      thought:newMessage
+      message:newMessage
     })
   }
-    fetch("https://happythoughtsapiproject.herokuapp.com/thoughts", options)
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
     .then(res=>res.json())
     .then(()=>fetchMessages())
     .finally(()=>setNewMessage(''))
@@ -44,7 +44,9 @@ const handleLikesIncrease = (thoughtId) => {
 const options = {
   method: 'POST',
     }
-     fetch(`https://happythoughtsapiproject.herokuapp.com/thoughts/${thoughtId}/likes`, options)
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, options)
+
+
     .then(res => res.json())
     .then(data => {
      fetchMessages(data)      
