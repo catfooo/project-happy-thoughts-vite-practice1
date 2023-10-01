@@ -16,3 +16,5 @@ export const ThoughtForm = ({newMessage,onNewMessageChange,onFormSubmit}) => {
     </form>
   )
 }
+
+export default ThoughtForm

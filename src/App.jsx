@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
-import { ThoughtForm } from 'components/ThoughtForm'
-import { ThoughtList } from 'components/ThoughtList'
+import ThoughtForm from './components/ThoughtForm'
+import ThoughtList from './components/ThoughtList'
 
 
 export const App = () => {
@@ -58,3 +58,5 @@ const options = {
     </div>
   )
 }
+
+export default App;
